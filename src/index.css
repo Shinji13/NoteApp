@@ -8,5 +8,6 @@
     box-sizing: border-box; 
 }
 body{
-    background-color: #cecbcb;
+    background-color: #ededed;
+    overflow-x:hidden;
 }

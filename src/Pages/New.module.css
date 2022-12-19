@@ -7,8 +7,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap:50px;
+    gap:30px;
 }
+
 .Form > .header{
     font-size: 3rem;
     font-weight: bolder;
@@ -19,7 +20,8 @@
     height: fit-content;
     display: flex ;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
 }
 .Form > .fields > .title{
    display: flex;
@@ -39,6 +41,11 @@
     padding: 16px 3px;
     border: 1px solid #121212;
     border-radius: 3px;
+}
+.Form > .fields > .tags{
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .Form > .fields > .tags >span{
     font-size: large;
@@ -73,21 +80,18 @@
     align-self: flex-end;
 }
 .Form > .ActionBtns > button,input{
-    width:80px;
-    aspect-ratio: 3/1.5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #121212;
-    border-radius: 6px;
-    color: #121212;
-    font-size: large;
+    width: 10vw;
+    height: 2.2rem;
+    padding: 5px 5px;
+    font-size: clamp(0.5rem,1vw,2rem);
     font-weight: bold;
     font-family:Arial, Helvetica, sans-serif ;
+    box-shadow:2px 2px 1px rgb(18, 18, 18,0.4) ;
+    border-radius: 4px;
 }
 .Form > .ActionBtns > input{
-     background-color: rgb(25, 74, 207);
+     background-color: #2473da;
 }
 .Form > .ActionBtns > button{
-    background-color: rgb(171, 172, 175);
+    background-color: #abacaf;
 }

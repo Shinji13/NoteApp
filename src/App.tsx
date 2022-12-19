@@ -19,13 +19,21 @@ export type RawNote={
      noteText:string,
      relatedTags:string[];
  }
+export type NoteV2={
+   id:string,
+   noteInfo:{
+   title:string,
+   relatedTags:string[];
+   noteText?:string,
+   },
+ }
 
 function App() {
   return (
      <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/new" element={<New/>}/>     
-        <Route path="/:id" >
+        <Route path="/note/:id" >
            <Route index element={<ShowNote/>}/>
            <Route path="edit" element={<EditNote/>}/>
         </Route>
