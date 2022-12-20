@@ -47,7 +47,7 @@ export default function Home() {
           <div>
             <button onClick={()=>{
                return nav("/new")
-            }}> NOTE</button>
+            }}> NEW NOTE</button>
             <button onClick={()=>{SetEdit(true)}}>EDIT TAGS</button>
           </div>
        </div>
@@ -58,7 +58,7 @@ export default function Home() {
         </div>
         <div className={style.tagFilter}>
             <span>Filter By tags</span>
-            <SelectComponent isPersisted={false}/>
+            <SelectComponent isPersisted={false} PreSelected={[]}/>
         </div>     
         </div>
        <div className={style.ThirdLayer}> 

@@ -1,18 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { preProcessFile } from 'typescript';
 import { v4 as uuidv4 } from 'uuid';
 import style from "./select.module.css"
 import { useSelectedTag } from './zustandStore';
 
 type Tag={value:string,key:string};
 
-const GetDefaultTags=()=>{
+const GetDefaultTags=(PreSelected)=>{
     let currentExistingTags=JSON.parse(localStorage.getItem("tags")!).ArrTags as Tag[];
-    return currentExistingTags;
+    return currentExistingTags.filter((el)=>{
+        let accepted=true;
+        for(let i=0;i<PreSelected.length;i++){
+           if(PreSelected[i].key===el.key){
+            accepted=false;
+            break;
+           }
+        }
+        return accepted;
+    }); 
   }
 
-export default function SelectComponent({isPersisted}:{isPersisted:boolean}) {
-  const [options,SetOptions]=useState<Tag[]>(GetDefaultTags);
-  const [SelectedTags,SetTags]=useState<Tag[]>([])
+export default function SelectComponent({isPersisted,PreSelected}:{isPersisted:boolean,PreSelected:Tag[]}) {
+  const [options,SetOptions]=useState<Tag[]>(()=>GetDefaultTags(PreSelected));
+  const [SelectedTags,SetTags]=useState<Tag[]>([...PreSelected])
   const [ShowOptions,ToggleOptions]=useState<boolean>(false)
   const addtagRef=useRef<HTMLInputElement>(null);
   const [push,pop,reset]=useSelectedTag((state)=>[state.push,state.pop,state.reset])

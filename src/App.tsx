@@ -1,7 +1,6 @@
 import { Route, Routes ,Navigate,Router } from "react-router"
-import EditNote from "./Pages/EditNote"
 import Home from "./Pages/Home"
-import New from "./Pages/New"
+import Neworedit from "./Pages/Neworedit"
 import ShowNote from "./Pages/ShowNote"
 localStorage.setItem("tags",(localStorage.getItem("tags"))||`{
    "ArrTags":[]
@@ -32,10 +31,10 @@ function App() {
   return (
      <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/new" element={<New/>}/>     
+        <Route path="/new" element={<Neworedit isEdit={false}/>}/>     
         <Route path="/note/:id" >
            <Route index element={<ShowNote/>}/>
-           <Route path="edit" element={<EditNote/>}/>
+           <Route path="edit" element={<Neworedit isEdit={true}/>}/>
         </Route>
         <Route path="*" element={<Navigate to="/"/>}/>
      </Routes>

@@ -6,6 +6,7 @@ interface SelectedTags{
     push:(newvalue:string)=>void,
     pop:(index :number)=>void,
     reset:()=>void,
+    intial:(Arr:string[])=>void
 }
 export const useSelectedTag = create<SelectedTags>((set,get) => ({
    Current :[],
@@ -21,5 +22,8 @@ export const useSelectedTag = create<SelectedTags>((set,get) => ({
    },
    reset:()=>{
     set({Current:[]})
+   },
+   intial:(Arr:string[])=>{
+        set({Current:[...Arr]})
    }
 }))

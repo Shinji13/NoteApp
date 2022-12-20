@@ -36,8 +36,9 @@ export default function ShowNote() {
           <div>{note.noteInfo.relatedTags.map((el)=><span>{el}</span>)}</div>
           </div>
           <div>
-            <button>Edit</button>
+            <button onClick={()=>{nav(`/note/${id}/edit`)}}>Edit</button>
             <button onClick={deleteNote}>Delete</button>
+            <button onClick={()=>{nav("/")}}>Back</button>
           </div>
         </div>
         <div className={style.secondLayer}>{note.noteInfo.noteText}</div>

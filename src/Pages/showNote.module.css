@@ -66,13 +66,19 @@
     background-color: #1288cc;
 }
 .note > .firstLayer > div:last-child >button:last-child{
-    background-color: #be1d07;
+    background-color: #818080;
+}
+.note > .firstLayer > div:last-child >button:nth-child(2){
+    background-color: #b90909;
 }
 .note > .firstLayer > div:last-child >button:first-child:hover{
     background-color: #8fb7ce;
 }
 .note > .firstLayer > div:last-child >button:last-child:hover{
-    background-color: #c5928b;
+    background-color: #c0c0bf;
+}
+.note > .firstLayer > div:last-child >button:nth-child(2):hover{
+    background-color: #b95a5a;
 }
 .note > .secondLayer {
     width: 80%;
